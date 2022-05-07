@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title></title>
+    <dateModified></dateModified>
+    <ownerName></ownerName>
+  </head>
+  <body>
+<outline text="AJAX" _note="get&#10;&#10;    //步骤一:创建异步对象&#10;    var xhr = new XMLHttpRequest();&#10;    //步骤二:设置请求的基本参数&#10;    xhr.open('get','test.php');&#10;    //步骤三:发送请求&#10;    xhr.send();&#10;    //步骤四:注册onreadystatechange监听事件，只要状态改变就会调用&#10;    xhr.onreadystatechange = function () {&#10;      if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) {&#10;       //步骤五 如果能够进到这个判断 说明数据完美到手&#10;       console.log(ajax.responseText);//操作返回内容&#10;       }&#10;    }&#10;&#10;post&#10;&#10;    //创建异步对象  &#10;    var xhr = new XMLHttpRequest();&#10;    //设置请求基本信息，并加上请求头&#10;    xhr.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);&#10;    xhr.open('post', 'test.php' );&#10;    //发送请求&#10;    xhr.send('name=Lan&amp;age=18');&#10;    xhr.onreadystatechange = function () {&#10;        // 这步为判断服务器是否正确响应&#10;      if (xhr.readyState == 4 &amp;&amp; xhr.status == 200) {&#10;        console.log(xhr.responseText);&#10;      } &#10;    };">
+</outline>
+<outline text="fetch" _note="get&#10;&#10;默认是不带上Cookie的，手动的把Cookie带上，只需加上&#10;`credentials: 'include'`&#10;&#10;    fetch('https://www.abc.com/search', {&#10;        method: 'GET',&#10;        credentials: 'include' // 强制加入Cookie&#10;      })&#10;      .then((res)=&gt;{&#10;        return res.text()&#10;      })&#10;      .then((res)=&gt;{&#10;        console.log(res)&#10;      })&#10;&#10;post&#10;&#10;    fetch('http://www.mozotech.cn/bangbang/index/user/login', {&#10;        method: 'post',&#10;        headers: {&#10;        'Content-Type': 'application/x-www-form-urlencoded'&#10;        },&#10;        body: new URLSearchParams([&#10;            [&quot;username&quot;, &quot;Lan&quot;],[&quot;password&quot;, &quot;123456&quot;]&#10;        ]).toString()&#10;    })&#10;    .then(res =&gt; {&#10;        console.log(res);&#10;        return res.text();&#10;    })&#10;    .then(data =&gt; {&#10;        console.log(data);&#10;    })&#10;&#10;fetch默认的post的header是`Content-Type:text/plain;charset=UTF-8`，不过通常我们的post请求是通过表单的形式提交的。所以我们需要把header修改为：`Content-Type:application/x-www-form-urlencoded`">
+</outline>
+<outline text="axois" _note="    axios({&#10;        method: 'post',&#10;        url: '/abc/login',&#10;        data: {&#10;            userName: 'Lan',&#10;            password: '123'&#10;        }&#10;    })&#10;    .then(function (response) {&#10;        console.log(response);&#10;    })&#10;    .catch(function (error) {&#10;        console.log(error);&#10;    });">
+</outline>
+<outline text="几种方式的对比" _note="ajax：  &#10;【**优点**：局部更新；原生支持】  &#10;【**缺点**：可能破坏浏览器后退功能；嵌套回调】  &#10;fetch：  &#10;【**优点**：解决回调地狱】  &#10;【**缺点**：API 偏底层，需要封装;默认不带Cookie，需要手动添加;&#10;浏览器支持情况不是很友好，需要第三方的ployfill】  &#10;axios：  &#10;【几乎完美】">
+</outline>
+<outline text="HTTP content-type" _note="一般是指网页中存在的&#10;Content-Type，用于定义网络文件的类型和网页的编码，决定浏览器将以什么形式、什么编码读取这个文件&#10;&#10;Content-Type 标头告诉客户端实际返回的内容的内容类型。">
+  <outline text="媒体格式类型" _note="-   text/html ： HTML格式&#10;&#10;-   text/plain ：纯文本格式&#10;&#10;-   text/xml ： XML格式&#10;&#10;-   image/gif ：gif图片格式&#10;&#10;-   image/jpeg ：jpg图片格式&#10;&#10;-   image/png：png图片格式">
+  </outline>
+  <outline text="application开头的媒体格式类型：" _note="-   application/xhtml+xml ：XHTML格式&#10;&#10;-   application/xml： XML数据格式&#10;&#10;-   application/atom+xml ：Atom XML聚合格式&#10;&#10;-   application/json： JSON数据格式&#10;&#10;-   application/pdf：pdf格式&#10;&#10;-   application/msword ： Word文档格式&#10;&#10;-   application/octet-stream ： 二进制流数据（如常见的文件下载）&#10;&#10;-   application/x-www-form-urlencoded ：&#10;    中默认的encType，form表单数据被编码为key/value格式发送到服务器（表单默认的提交数据的格式）">
+  </outline>
+  <outline text="上传文件时使用的" _note="-   multipart/form-data ： 需要在表单中进行文件上传时，就需要使用该格式&#10;&#10;-">
+  </outline>
+</outline>
+  </body>
+</opml>

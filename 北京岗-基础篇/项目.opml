@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title></title>
+    <dateModified></dateModified>
+    <ownerName></ownerName>
+  </head>
+  <body>
+<outline text="起项目" _note="1.  登录&lt;https://gitlab.enncloud.cn&gt;&#10;&#10;2.  打开项目，复制一下地址&#10;&#10;    ![](C:\Users\yaotingtinga\AppData\Roaming\Typora\typora-user-images\image-20210512104433127.png)&#10;&#10;3.  在本地新建一个项目文件夹，在文件夹中点击右键git base here&#10;&#10;4.  git clone + 刚才复制的 url，开始安装项目。&#10;&#10;    ![](C:\Users\yaotingtinga\AppData\Roaming\Typora\typora-user-images\image-20210512104807654.png)&#10;&#10;5.  vscode运行项目，进入项目文件夹&#10;&#10;    查看分支，复制的地址是著项目的有master还有develop，只能在develop中更改。&#10;&#10;        git branch -a&#10;&#10;    ![](C:\Users\yaotingtinga\AppData\Roaming\Typora\typora-user-images\image-20210512105728921.png)&#10;&#10;    分支名切换分支&#10;&#10;        git checkout 分支名&#10;&#10;    ![](C:\Users\yaotingtinga\AppData\Roaming\Typora\typora-user-images\image-20210512105941910.png)&#10;&#10;    把仓库更新的代码，下载下来，下载之前记得把新写的放进仓库。&#10;&#10;        git pull&#10;&#10;    ![](C:\Users\yaotingtinga\AppData\Roaming\Typora\typora-user-images\image-20210512110114059.png)">
+</outline>
+<outline text="公司项目目录结构" _note="首先在module中新建一个组件文件夹，并且在组建文件夹下面-src里面建一个同名的vue作为入口。还建一个同名+config.vue的文件作为配置文件。&#10;&#10;然后在mudule下的index.js里导入刚刚创建的文件夹路径。&#10;&#10;最后在baselist.js中复制一个配置组件。">
+</outline>
+<outline text="项目上传" _note="1.  git add . 添加当前目录下的所有文件到暂存区&#10;&#10;2.  git commit -m ‘’ 本次提交的说明&#10;&#10;3.  git pull 再次把远端的代码拉到本地&#10;&#10;4.  这个时候如果有了冲突就解决冲突，如果没有冲突，就执行git&#10;    push把已经提交到暂存区的代码推到远端">
+</outline>
+<outline text="调接口" _note="1.  首先在api文件夹下面的index.js配置。&#10;&#10;    函数名是随便起，这就是接口的名称&#10;&#10;    调用方法有url和method在接口网址有写&#10;&#10;    当时post方法时写data: params,当是get方法时，写成params: params&#10;&#10;        export function getList111(params) {&#10;            return service({&#10;                url: 'http://gz-boiler-devops-backend-2.test.fnwintranet.com/work/order/list',&#10;                method: 'POST',&#10;                data: params,&#10;            })&#10;        }&#10;&#10;2.  然后再调用文件处导入&#10;&#10;        import {getList111, getList112 ,getList113} from '../api/index'&#10;&#10;3.  声明用到的数据&#10;&#10;        data(){&#10;            shuju:[],&#10;            input3:[],&#10;            input4:[],&#10;        }&#10;&#10;4.  methods中写，getList()是自定义方法，方便调用。然后是接口名&#10;&#10;    先输出res查看code以及数据怎么通过res.调用。code值查看到以后设置状态码，再把res.data赋值给data中定义的变量保存，之后就可以再页面中调用了。&#10;&#10;         getList(){&#10;          getList111({&#10;            page:1,&#10;            row:10,&#10;          }).then((res)=&gt;{&#10;            if(res.data.code==0){&#10;              console.log(res);&#10;              this.shuju = res.data.data.records;&#10;              console.log('this.shuju',this.shuju);&#10;            }&#10;          })&#10;        },">
+</outline>
+<outline text="接口的几种使用环境">
+  <outline text="开发和配置环境：" _note="所有的开发和配置在这个环境里进行。一般情况下，只有这个环境可以改配置和进行开发，并且一般不在这个环境下创建数据。（开发环境就是每个开发人员电脑上的开发环境，只有开发人员可以配置和开发，写数据测试放在测试环境）">
+  </outline>
+  <outline text="测试环境：" _note="新开发和配置通过系统传输到测试环境，进行功能测试，可以创建数据。（开发人员开发完上传到&#10;SVN，测试人员下载下来测试。如果测试人员不懂&#10;IDE，就由开发人员下载好，直接通过IP地址访问来测试的。）">
+  </outline>
+  <outline text="预生产环境（不是必须的）：" _note="从生产环境不定期同步，保持和生产环境的设置、数据一致性，也是用于测试，它和测试环境最大的区别就是它和生产系统的同步性最高，几乎一样，有些测试，比如需要大数据量的，用这个环境测试看程序性能比用测试环境（一般情况下数据较少）会更准确。(不是必须的，有的公司没有)">
+  </outline>
+  <outline text="生产环境：" _note="正式使用的系统环境。&#10;一般情况下，一个环境对应一个服务器，也有一些公司把开发、测试等环境放到一个服务器的。（从SVN上通过&#10;FTP 下载下来，然后在服务器上的 tomcat 部署、发布，服务器是 linux 的）&#10;&#10;Tips:测试环境还有一个用处。向开发中的外部系统提供服务时，直接用生产环境进行联调是不合适，用测试环境就没什么风险了。因此，我们的产品上线后，测试环境仍要与生产环境长期共存、并保持开放状态（测试环境和生产环境一致，用测试环境的目的是，测试时，不影响线上项目的正常使用，等测试完毕，再上生产环境。）">
+  </outline>
+</outline>
+  </body>
+</opml>

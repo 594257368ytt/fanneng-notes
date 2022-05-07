@@ -1,0 +1,21 @@
+ { 
+  "printWidth": 300, 
+  "tabWidth": 2, 
+  "singleQuote": true, 
+  "semi": false ,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "tslint.autoFixOnSave": true,
+  "vetur.completion.autoImport": true,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.format.defaultFormatter.js": "vscode-typescript", 
+  "vetur.format.options.tabSize": 2,
+  "vetur.format.options.useTabs": false,
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_attributes": "auto"
+  }},
+  "eslint.validate": ["javascript", "javascriptreact", "html", "vue"]
+}

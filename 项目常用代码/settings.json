@@ -1,0 +1,83 @@
+{
+  "vetur.completion.scaffoldSnippetSources": {
+    "vetur.validation.template": "false"
+  },
+  "editor.fontSize": 20,
+  "vetur.validation.template": false,
+  "vetur.validation.script": false,
+  "vetur.validation.style": false,
+  "vetur.validation.interpolation": false,
+  "vetur.languageFeatures.updateImportOnFileMove": false,
+  "vetur.languageFeatures.codeActions": false,
+  "vetur.format.enable": false,
+  "vetur.completion.autoImport": false,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Default High Contrast",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "diffEditor.renderSideBySide": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // vscode默认启用了根据文件类型自动设置stabsize的选项
+  "editor.detectIndentation": false,
+  // 重新设定tabsize
+  "editor.tabSize": 2,
+  // #每次保存的时候自动格式化
+  "editor.formatOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "vue"
+  ],
+  //  #让prettier使用eslint的代码格式进行校验
+  "prettier.eslintIntegration": true,
+  //  #去掉代码结尾的分号
+  "prettier.semi": false,
+  //  #使用带引号替代双引号
+  "prettier.singleQuote": true,
+  //  #让函数(名)和后面的括号之间加个空格
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  // #让vue中的js按编辑器自带的ts格式进行格式化
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_attributes": "force-aligned"
+      // #vue组件中html代码格式化样式
+    }
+  },
+  "window.zoomLevel": 0,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
+  "tabnine.experimentalAutoImports": true,
+  "editor.codeLensFontFamily": "Fira code",
+  "auto-close-tag.SublimeText3Mode": true,
+  "auto-close-tag.enableAutoCloseTag": true,
+  "auto-close-tag.enableAutoCloseSelfClosingTag": true,
+  "auto-close-tag.activationOnLanguage": ["*"],
+  /*  prettier的配置 */
+  "prettier.printWidth": 100, // 超过最大值换行
+  "prettier.tabWidth": 2, // 缩进字节数
+  "prettier.useTabs": false, // 缩进不使用tab，使用空格
+  "prettier.proseWrap": "preserve", // 默认值。因为使用了一些折行敏感型的渲染器（如GitHub comment）而按照markdown文本样式进行折行
+  "prettier.arrowParens": "avoid", //  (x) => {} 箭头函数参数只有一个时是否要有小括号。avoid：省略括号
+  "prettier.bracketSpacing": true, // 在对象，数组括号与文字之间加空格 "{ foo: bar }"
+  "prettier.endOfLine": "auto", // 结尾是 \n \r \n\r auto
+  //"prettier.eslintIntegration": false, //不让prettier使用eslint的代码格式进行校验
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.ignorePath": ".prettierignore", // 不使用prettier格式化的文件填写在项目的.prettierignore文件中
+  "prettier.jsxBracketSameLine": false, // 在jsx中把'>' 是否单独放一行
+  "prettier.parser": "babylon", // 格式化的解析器，默认是babylon
+  "prettier.requireConfig": false, // Require a 'prettierconfig' to format prettier
+  "prettier.stylelintIntegration": false, //不让prettier使用stylelint的代码格式进行校验
+  "prettier.trailingComma": "es5", // 在对象或数组最后一个元素后面是否加逗号（在ES5中加尾逗号）
+  "prettier.tslintIntegration": false,
+  "terminal.integrated.allowMnemonics": true,
+  "terminal.integrated.automationShell.linux": "",
+  "typescript.format.insertSpaceAfterTypeAssertion": true,
+  "auto-close-tag.insertSpaceBeforeSelfClosingTag": true, // 不让prettier使用tslint的代码格式进行校验
+  ///报错的话，检查一下有没有用逗号与上一项设置分隔
+
+}
